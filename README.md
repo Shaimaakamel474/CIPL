@@ -1,6 +1,6 @@
 # Cross- and Intra-image Prototypical Learning (CIPL)
 
-### Pytorch implementation for the paper "[Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation](https://ieeexplore.ieee.org/document/10887396)".
+### Pytorch implementation for the paper "[Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation](https://ieeexplore.ieee.org/document/10887396)" at IEEE TMI 2025.
 
 
 In this work, we present a Cross- and Intra-image Prototypical Learning (CIPL) framework, for accurate multi-label disease diagnosis and interpretation.
