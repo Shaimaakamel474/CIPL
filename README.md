@@ -3,9 +3,9 @@
 ### Pytorch implementation for the paper "[Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation](https://ieeexplore.ieee.org/document/10887396)" at IEEE TMI 2025.
 
 
-In this work, we present a Cross- and Intra-image Prototypical Learning (CIPL) framework, for accurate multi-label disease diagnosis and interpretation.
-CIPL takes advantage of cross-image common semantics to disentangle the multiple diseases when learning the prototypes.
-Two-level alignment-based regularisation strategy leverages consistent intra-image information to enhance interpretation robustness and predictive performance.
+In this work, we present the Cross- and Intra-image Prototypical Learning framework for accurate multi-label disease diagnosis and interpretation.
+CIPL takes advantage of cross-image common semantics to disentangle multiple diseases during prototype learning, ensuring high-quality prototypes in the multi-label interpretation setting.
+Additionally, a two-level alignment-based regularization strategy enhances interpretation robustness and predictive performance by enforcing consistent intra-image information.
 
 
 <div align=center>
