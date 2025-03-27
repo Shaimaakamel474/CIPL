@@ -26,7 +26,7 @@ Chest X-ray ([NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/
 For a given test image, run interpretable_reasoning.py to show a set of similarity (activation) maps to the prototypes of each disease class.
 
 <div align=center>
-<img width="460" height="255" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
+<img width="660" height="275" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
 </div>
 
 
