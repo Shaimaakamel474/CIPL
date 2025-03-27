@@ -1,0 +1,5 @@
+NIH ChestX-ray14 can be downloaded from:
+https://www.kaggle.com/datasets/nih-chest-xrays/data
+
+Ocular Disease Intelligent Recognition (ODIR) can be downloaded from:
+https://academictorrents.com/details/cf3b8d5ecdd4284eb9b3a80fcfe9b1d621548f72
