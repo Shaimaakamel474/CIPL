@@ -28,7 +28,7 @@ To visualize the decision process for a given test image, run interpretable_reas
 This will generate a set of similarity (activation) maps that highlight the correspondence between the test image and the prototypes of each disease class, providing insights into the model's reasoning.
 
 <div align=center>
-<img width="660" height="355" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
+<img width="660" height="375" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
 </div>
 
 
