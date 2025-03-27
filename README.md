@@ -28,6 +28,14 @@ Two-level alignment-based regularisation strategy leverages consistent intra-ima
 ## Interpretable reasoning:
 For a given test image, run interpretable_reasoning.py to show a set of similarity (activation) maps to the prototypes of each disease class.
 
+<div align=center>
+<img width="460" height="255" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
+</div>
+
+<div align=center>
+<img width="460" height="255" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
+</div>
+
 
 ## Results:
 1. Please refer to our paper for more results.
