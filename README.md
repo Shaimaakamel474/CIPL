@@ -18,7 +18,7 @@ Chest X-ray ([NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/
 
 
 ## Training and Testing:
-1. Run python main.py to train the model and evaluate its disease diagnosis accuracy. Our trained models are provided at [ChestX-ray14](https://drive.google.com/file/d/1svxfab5YG2BVoSKe99krhwWeqQyQFUqw/view?usp=drive_link) and [ODIR](https://drive.google.com/file/d/1svxfab5YG2BVoSKe99krhwWeqQyQFUqw/view?usp=drive_link):
+1. Run python main.py to train the model and evaluate its disease diagnosis accuracy. Our trained models are provided at [ChestX-ray14](https://drive.google.com/file/d/1svxfab5YG2BVoSKe99krhwWeqQyQFUqw/view?usp=drive_link) and [ODIR](https://drive.google.com/file/d/1ykIhO6d2AqFO0Wy4Rmr4VIzvTVeoQIaQ/view?usp=drive_link):
 2. Each prototype is visualized as the nearest non-repetitive training patch representing its corresponding disease class using push.py.
 
 
