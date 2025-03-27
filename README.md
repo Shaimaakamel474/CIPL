@@ -14,7 +14,7 @@ Two-level alignment-based regularisation strategy leverages consistent intra-ima
 
 
 ## Datasets:
-[NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/data) and fundus [ODIR](https://academictorrents.com/details/cf3b8d5ecdd4284eb9b3a80fcfe9b1d621548f72) are publicly available.
+Chest xray ([NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/data)) and fundus images ([ODIR](https://academictorrents.com/details/cf3b8d5ecdd4284eb9b3a80fcfe9b1d621548f72)) are publicly available.
 
 
 ## Training and Testing:
