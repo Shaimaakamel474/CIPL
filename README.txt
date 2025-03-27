@@ -3,7 +3,7 @@
 ### Pytorch Implementation for the paper "[Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation](https://ieeexplore.ieee.org/document/10887396)".
 
 <div align=center>
-<img width="460" height="255" src="https://github.com/cwangrun/ST-ProtoPNet/blob/master/full/arch/intro.png"/></dev>
+<img width="460" height="255" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
 </div>
 
 In this work, we present a Cross- and Intra-image Prototypical Learning (CIPL) framework, for accurate multi-label disease diagnosis and interpretation.
@@ -12,7 +12,7 @@ Two-level alignment-based regularisation strategy leverages consistent intra-ima
 
 
 <div align=center>
-<img width="460" height="245" src="https://github.com/cwangrun/ST-ProtoPNet/blob/master/full/arch/arch.png"/></dev>
+<img width="460" height="245" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
 </div>
 
 
