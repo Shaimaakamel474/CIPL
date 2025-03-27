@@ -18,8 +18,8 @@ Chest X-ray ([NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/
 
 
 ## Training and Testing:
-1. python main.py to train a model and test its disease diagnosis accuracy. Our trained models:
-2. each prototype is visulised as the nearest non-repetitive training patch of the corresponding disease class (push.py).
+1. Run python main.py to train the model and evaluate its disease diagnosis accuracy. Our trained models:
+2. Each prototype is visualized as the nearest non-repetitive training patch representing its corresponding disease class using push.py.
 
 
 ## Interpretable reasoning:
