@@ -9,7 +9,7 @@ Two-level alignment-based regularisation strategy leverages consistent intra-ima
 
 
 <div align=center>
-<img width="800" height="480" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
+<img width="800" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
 </div>
 
 
