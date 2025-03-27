@@ -23,7 +23,7 @@ Chest X-ray ([NIH ChestX-ray14](https://www.kaggle.com/datasets/nih-chest-xrays/
 
 
 ## Interpretable reasoning:
-CIPL relies on tranining prototypes as anchors for diagnosis reasoning. For a given test image, run interpretable_reasoning.py to display a set of similarity (activation) maps to the prototypes of each disease class.
+CIPL relies on disentangled class prototypes learned from the training set as anchors for diagnosis reasoning. For a given test image, run interpretable_reasoning.py to display a set of similarity (activation) maps to the prototypes of each disease class.
 
 <div align=center>
 <img width="660" height="275" src="https://github.com/cwangrun/CIPL/blob/master/arch/reasoning.png"/></dev>
