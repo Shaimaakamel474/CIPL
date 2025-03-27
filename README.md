@@ -34,7 +34,7 @@ This will generate a set of similarity (activation) maps that highlight the corr
 
 
 ## Results:
-1. Please refer to our paper for more results.
+CIPL exhibits superior Please refer to our paper for more results.
 
 <div align=center>
 <img width="900" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
