@@ -4,12 +4,12 @@
 
 
 In this work, we present the Cross- and Intra-image Prototypical Learning (CIPL) framework for accurate multi-label disease diagnosis and interpretation.
-CIPL takes advantage of cross-image common semantics to disentangle multiple diseases during prototype learning, ensuring high-quality prototypes in the multi-label interpretation setting.
+CIPL takes advantage of cross-image common semantics to disentangle multiple diseases during the prototype learning, ensuring high-quality prototypes in the multi-label interpretation setting.
 Additionally, a two-level alignment-based regularization strategy enhances interpretation robustness and predictive performance by enforcing consistent intra-image information.
 
 
 <div align=center>
-<img width="900" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
+<img width="900" height="390" src="https://github.com/cwangrun/CIPL/blob/master/arch/arch.png"/></dev>
 </div>
 
 
