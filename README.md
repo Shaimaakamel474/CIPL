@@ -37,7 +37,7 @@ This will generate a set of similarity (activation) maps that highlight the corr
 1. Please refer to our paper for more results.
 
 <div align=center>
-<img width="460" height="255" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
+<img width="900" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
 </div>
 
 
