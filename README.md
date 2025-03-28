@@ -37,7 +37,7 @@ This will generate a set of similarity (activation) maps that highlight the corr
 CIPL demonstrates high-quality visual prototypes that are both disentangled and accurate (aligning well with actual lesion signs), outperforming previous studies. For further details, please refer to our paper.
 
 <div align=center>
-<img width="830" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
+<img width="810" height="400" src="https://github.com/cwangrun/CIPL/blob/master/arch/prototype.png"/></dev>
 </div>
 
 
