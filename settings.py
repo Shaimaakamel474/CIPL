@@ -1,6 +1,6 @@
 base_architecture = 'densenet121'
 img_size = 256
-num_classes = 15
+num_classes = 14
 prototype_shape = (50 * num_classes, 256, 1, 1)
 prototype_activation_function = 'log'
 add_on_layers_type = 'regular'
