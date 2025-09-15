@@ -43,20 +43,24 @@ class ChestDataset(Dataset):
         self.mode = mode
         self.warmup = warmup
 
-        if self.mode == 'train' or self.mode == 'push':
-            label_file = 'train_val_list.txt'
-        else:
-            label_file = 'test_list.txt'
+        # Paths ثابتة
+        txt_csv_dir = "/kaggle/input/data"
+        images_dir = "/kaggle/input/nih-data-collected-512/NIH_Data_512"
 
-        gr_path = os.path.join(root_dir, "Data_Entry_2017.csv")
+        # تحديد ملف القوائم
+        label_file = 'train_val_list.txt' if self.mode in ['train', 'push'] else 'test_list.txt'
+
+        # قراءة CSV
+        gr_path = os.path.join(txt_csv_dir, "Data_Entry_2017.csv")
         gr = pd.read_csv(gr_path, index_col=0)
         gr = gr.to_dict()["Finding Labels"]
 
-        img_list = os.path.join(root_dir, label_file)
+        # قراءة TXT
+        img_list = os.path.join(txt_csv_dir, label_file)
         with open(img_list) as f:
             all_names = f.read().splitlines()
 
-        self.all_imgs = np.asarray([x for x in all_names])
+        self.all_imgs = np.asarray(all_names)
         self.gr_str = np.asarray([gr[i] for i in self.all_imgs])
         self.gr = np.zeros((self.gr_str.shape[0], len(Labels)))
         for idx, i in enumerate(self.gr_str):
@@ -64,28 +68,26 @@ class ChestDataset(Dataset):
             binary_result = mlb.fit_transform([[Labels[i] for i in target]]).squeeze()
             self.gr[idx] = binary_result
 
-        same_class_index = []
-        for i in range(self.gr.shape[1]):
-            same_class_index.append(np.where(self.gr[:, i] == 1)[0])
-        self.same_class_index = same_class_index
+        self.same_class_index = [np.where(self.gr[:, i] == 1)[0] for i in range(self.gr.shape[1])]
+        self.images_dir = images_dir  # نخزن مسار الصور
 
     def __len__(self):
         return len(self.gr)
 
     def __getitem__(self, index):
-        if self.mode == 'train' and self.warmup == False:
-            image_path = os.path.join(self.root_dir, "data", self.all_imgs[index])
-            image1 = Image.open(image_path).convert("RGB")
-            label1 = self.gr[index]
+        image_path1 = os.path.join(self.images_dir, self.all_imgs[index])
+        image1 = Image.open(image_path1).convert("RGB")
+        label1 = self.gr[index]
 
+        if self.mode == 'train' and not self.warmup:
             posi_index = random.choice(np.where(label1 == 1)[0])
             index2 = random.choice(self.same_class_index[posi_index])
-            image2_name = os.path.join(self.root_dir, "data", self.all_imgs[index2])
-            image2 = Image.open(image2_name).convert('RGB')
+            image_path2 = os.path.join(self.images_dir, self.all_imgs[index2])
+            image2 = Image.open(image_path2).convert("RGB")
             label2 = self.gr[index2]
 
-            transform_common = transforms.Compose([self.transform[0], self.transform[1], ])
-            transform_specific = transforms.Compose([self.transform[2], self.transform[3], ])
+            transform_common = transforms.Compose([self.transform[0], self.transform[1]])
+            transform_specific = transforms.Compose([self.transform[2], self.transform[3]])
 
             image1_common = transform_common(image1)
             data1 = transform_specific(image1_common)
@@ -96,30 +98,19 @@ class ChestDataset(Dataset):
             data2_aug = transform_specific(image2_common)
 
             if random.random() > 0.5:
-                data1 = transF.hflip(data1)
-                data1_aug = transF.hflip(data1_aug)
-
+                data1, data1_aug = transF.hflip(data1), transF.hflip(data1_aug)
             if random.random() > 0.5:
-                data2 = transF.hflip(data2)
-                data2_aug = transF.hflip(data2_aug)
-
+                data2, data2_aug = transF.hflip(data2), transF.hflip(data2_aug)
             if random.random() > 0.5:
-                data1 = transF.vflip(data1)
-                data1_aug = transF.vflip(data1_aug)
-
+                data1, data1_aug = transF.vflip(data1), transF.vflip(data1_aug)
             if random.random() > 0.5:
-                data2 = transF.vflip(data2)
-                data2_aug = transF.vflip(data2_aug)
+                data2, data2_aug = transF.vflip(data2), transF.vflip(data2_aug)
 
-            target1 = torch.tensor(label1).long()
-            target2 = torch.tensor(label2).long()
-
-            return data1, data2, target1, target2, data1_aug, data2_aug
+            return data1, data2, torch.tensor(label1).long(), torch.tensor(label2).long(), data1_aug, data2_aug
         else:
-            img_path = os.path.join(self.root_dir, "data", self.all_imgs[index])
-            img = Image.open(img_path).convert("RGB")
-            data = self.transform(img)
-            target = torch.tensor(self.gr[index]).long()
-            return data, target, img_path
+            data = self.transform(image1)
+            target = torch.tensor(label1).long()
+            return data, target, image_path1
+
             # return data, target, self.gr_str[index]
 
