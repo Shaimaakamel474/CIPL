@@ -6,7 +6,7 @@ prototype_activation_function = 'log'
 add_on_layers_type = 'regular'
 experiment_run = str(img_size)
 
-root_dir = '/mnt/c/chong/data/chestxray/'
+root_dir = '/kaggle/input/nih-data-collected-512/NIH_Data_512'
 
 train_batch_size = 24          # 24
 test_batch_size = 64           # 200
