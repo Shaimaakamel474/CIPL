@@ -9,7 +9,8 @@ import model
 import push
 import train_and_test as tnt
 import save
-from log import create_logger
+from .log import create_logger
+
 from utlis.utlis_func import *
 
 
