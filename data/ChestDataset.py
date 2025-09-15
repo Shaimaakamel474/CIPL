@@ -35,7 +35,6 @@ mlb = MultiLabelBinarizer(classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 from settings import img_size
 train_h, train_w = img_size, img_size   # 512
 
-
 class ChestDataset(Dataset):
     def __init__(self, root_dir, transform, mode, warmup) -> None:
         self.root_dir = root_dir
@@ -50,10 +49,10 @@ class ChestDataset(Dataset):
         # تحديد ملف القوائم
         label_file = 'train_val_list.txt' if self.mode in ['train', 'push'] else 'test_list.txt'
 
-        # قراءة CSV
+        # قراءة CSV بشكل صحيح
         gr_path = os.path.join(txt_csv_dir, "Data_Entry_2017.csv")
-        gr = pd.read_csv(gr_path, index_col=0)
-        gr = gr.to_dict()["Finding Labels"]
+        gr_df = pd.read_csv(gr_path)
+        gr = dict(zip(gr_df["Image Index"], gr_df["Finding Labels"]))
 
         # قراءة TXT
         img_list = os.path.join(txt_csv_dir, label_file)
@@ -65,11 +64,11 @@ class ChestDataset(Dataset):
         self.gr = np.zeros((self.gr_str.shape[0], len(Labels)))
         for idx, i in enumerate(self.gr_str):
             target = i.split("|")
-            binary_result = mlb.fit_transform([[Labels[i] for i in target]]).squeeze()
+            binary_result = mlb.fit_transform([[Labels[t] for t in target]]).squeeze()
             self.gr[idx] = binary_result
 
         self.same_class_index = [np.where(self.gr[:, i] == 1)[0] for i in range(self.gr.shape[1])]
-        self.images_dir = images_dir  # نخزن مسار الصور
+        self.images_dir = images_dir  # تخزين مسار الصور
 
     def __len__(self):
         return len(self.gr)
