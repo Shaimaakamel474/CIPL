@@ -1,12 +1,12 @@
 base_architecture = 'densenet121'
 img_size = 256
-num_classes = 14
+num_classes = 15
 prototype_shape = (50 * num_classes, 256, 1, 1)
 prototype_activation_function = 'log'
 add_on_layers_type = 'regular'
 experiment_run = str(img_size)
 
-root_dir = '/kaggle/input/nih-data-collected-512/NIH_Data_512'
+root_dir = '/kaggle/input/nih-total/Total_Images/Total_Images'
 
 train_batch_size = 24          # 24
 test_batch_size = 64           # 200
