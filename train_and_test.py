@@ -478,7 +478,7 @@ def _testing(model, dataloader, optimizer=None, train_last=False, class_specific
     
     print("Number of output classes:", model.module.num_classes)
 
-    n_correct += (predicted == all_targets[:, 0:model.module.num_classes]).sum().item()
+    n_correct += (predicted == all_targets[:, :predicted.shape[1]]).sum().item()
 
     all_auc = np.asarray(
         [roc_auc_score(all_targets[:, i], predictions[:, i]) for i in range(model.module.num_classes - 1)],
