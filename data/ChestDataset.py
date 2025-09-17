@@ -44,7 +44,7 @@ class ChestDataset(Dataset):
 
         # Paths ثابتة
         txt_csv_dir = "/kaggle/input/nih-total"
-        images_dir = "/kaggle/input/nih-total/Total_Images/Total_Images"
+        images_dir = "/kaggle/input/tst-shaima"
 
         # تحديد ملف القوائم
         label_file = 'train_val_list.txt' if self.mode in ['train', 'push'] else 'test_list.txt'
