@@ -466,6 +466,11 @@ def _testing(model, dataloader, optimizer=None, train_last=False, class_specific
     # evaluation statistics   
     predicted = 1.0 * (predictions > 0.5)
     n_examples = all_targets.shape[0] * all_targets[:, 0:model.module.num_classes].shape[1]
+    print("👉 predicted shape:", predicted.shape)
+    print("👉 all_targets shape:", all_targets.shape)
+    print("👉 model.module.num_classes:", model.module.num_classes)
+    print("👉 all_targets sliced shape:", all_targets[:, 0:model.module.num_classes].shape)
+
     n_correct += (predicted == all_targets[:, 0:model.module.num_classes]).sum().item()
 
     all_auc = np.asarray(
