@@ -43,8 +43,8 @@ class ChestDataset(Dataset):
         self.warmup = warmup
 
         # Paths ثابتة
-        txt_csv_dir = "/kaggle/input/data"
-        images_dir = "/kaggle/input/nih-data-collected-512/NIH_Data_512"
+        txt_csv_dir = "/kaggle/input/nih-total"
+        images_dir = "/kaggle/input/nih-total/Total_Images/Total_Images"
 
         # تحديد ملف القوائم
         label_file = 'train_val_list.txt' if self.mode in ['train', 'push'] else 'test_list.txt'
