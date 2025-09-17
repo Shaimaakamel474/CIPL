@@ -43,7 +43,7 @@ class ChestDataset(Dataset):
         self.warmup = warmup
 
         # Paths ثابتة
-        txt_csv_dir = "/kaggle/input/nih-total"
+        txt_csv_dir = "/kaggle/working/filtered_files"
         images_dir = "/kaggle/input/tst-shaima"
 
         # تحديد ملف القوائم
