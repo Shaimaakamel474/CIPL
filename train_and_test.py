@@ -470,6 +470,13 @@ def _testing(model, dataloader, optimizer=None, train_last=False, class_specific
     print("👉 all_targets shape:", all_targets.shape)
     print("👉 model.module.num_classes:", model.module.num_classes)
     print("👉 all_targets sliced shape:", all_targets[:, 0:model.module.num_classes].shape)
+    # لو الموديل بيتخزن فيه أسماء الكلاسات
+    if hasattr(model.module, 'class_names'):
+        print("✅ Model classes:", model.module.class_names)
+    else:
+        print("⚠️ Model does not have class_names attribute")
+    
+    print("Number of output classes:", model.module.num_classes)
 
     n_correct += (predicted == all_targets[:, 0:model.module.num_classes]).sum().item()
 
